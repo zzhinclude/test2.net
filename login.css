@@ -1,0 +1,21 @@
+div {
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+   }
+    span {
+    display: inline-block;
+    width: 60px;
+    cursor: pointer;
+   }
+    img {
+  vertical-align: middle;
+  width: 20px;
+  cursor: pointer;
+  }
+
+  .Input input {/*input类里的input属性大部分是输入框，手机号码，密码，验证码等*/
+    width: 200px;/*宽度*/
+    padding-left: 20px;/*左内边距*/
+    margin-left: 10px;/*左外边距*/
+}

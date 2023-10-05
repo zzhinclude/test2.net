@@ -1,0 +1,140 @@
+:root {
+  --primary-color: #31c27c;/*标明所有初始颜色*/
+}
+/* body 样式 */
+body {
+  margin: 0;/*清除默认值*/
+  background: #f5f5f5;/*白色背景*/
+  font-family: Microsoft Yahei;/*微软雅黑*/
+  font-size: 14px;
+  /* min-width: 1000px; */
+}
+a {
+  text-decoration: none;/*定义标准文本无修饰*/
+  color: #000;/*黑色标题*/
+}
+/* 标题 */
+header {
+  height: 90px;
+  background: white;
+  display: flex;/*采用响应式布局*/
+  align-items: center;/*垂直居中对齐*/
+}
+/* 副标题 */
+.header-inner, main {
+  /* width: 1200px; */
+  padding: 20px;
+  margin: auto;/*居中对齐*/
+}
+.tag-list {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+.tag-item {
+  display: inline-block;/*内联对象在同一行*/
+  padding: 0 8px;
+  margin-right: 24px;
+  line-height: 26px;
+  color: #000;
+  text-decoration: none;/*无修饰*/
+}
+.tag-active {
+  background: var(--primary-color);
+  color: white;/*内地字样为白色*/
+}
+.tag-item:not(.tag-active):hover {
+  color: var(--primary-color);/*鼠标悬浮时为绿色*/
+}
+.nowrap {
+  white-space: nowrap;/*规定中的文本不换行*/
+  overflow: hidden;/*内容溢出时隐藏*/
+  text-overflow: ellipsis;/*省略标记*/
+}
+.playlist {
+  display: grid;/*使用二维布局*/
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));/*设置行模板*/
+  gap: 45px 15px;/*设置行列间距*/
+  margin-bottom: 45px;
+}
+.cover-wrap {
+  display: flex;/*使用响应式布局*/
+  position: relative;/*采用相对位置确保不脱离文档流*/
+  overflow: hidden;/*内容溢出时隐藏*/
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;/*主轴水平居中对齐*/
+  cursor: pointer;/*鼠标悬浮改变样式*/
+}
+.cover-img {
+  width: 100%;
+  transition: all 0.75s;/*渐变效果*/
+}
+.cover-mask {
+  position: absolute;/*绝对定位*/
+  left: 0;/*定位属性*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;/*鼠标悬浮变黑*/
+  opacity: 0;
+  transition: all 0.5s;
+}
+.cover-play {
+  position: absolute;/*绝对定位：使得播放按钮位于图片中心*/
+  left: 50%;
+  top: 50%;
+  margin-left: -35px;
+  margin-top: -35px;
+  opacity: 0;/*初始透明效果*/
+  transform: scale(0.7);/*大小缩放至0.7*/
+  transition: all 0.5s;/*渐变效果*/
+}
+.cover-wrap:hover .cover-mask {
+  opacity: 0.2;/*遮罩的不透明度渐变*/
+}
+.cover-wrap:hover .cover-play {
+  opacity: 1;
+  transform: scale(1);/*播放按钮的不透明度和缩放渐变*/
+}
+.cover-wrap:hover .cover-img {
+  transform: scale(1.07);/*封面图片的缩放渐变为1.07*/
+}
+.album-title:hover {
+  color: var(--primary-color);
+}
+.album-author {
+  color: #999;/*作者名为灰色*/
+  line-height: 1.6;
+}
+.album-author:hover {
+  color: var(--primary-color);/*鼠标悬浮为绿*/
+}
+.album-time {
+  color: #999;/*播放时间为灰色*/
+}
+.page {
+  display: flex;/*页数选择为响应式*/
+  align-items: center;
+  justify-content: center;
+}
+.page-item {
+  display: inline-block;/*使内联对象呈现在同一行*/
+  color: #a2a2a2;/*基础颜色为灰色*/
+  line-height: 50px;
+  padding: 0 20px;
+  margin: 10px;
+  font-size: 16px;
+}
+.page-current, .page-item:not(.page-more):hover {
+  background: var(--primary-color);/*页数背景为绿色*/
+  color: white;/*页码为白色*/
+}
+/* 底部 */
+footer {
+  margin-top: 60px;
+  background: #333;
+  height: 200px;
+}
+
+
